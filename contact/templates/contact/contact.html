@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     {% load static %}
-	<title>Home</title>
+	<title>Contact</title>
 	<meta charset="UTF-8">
 	<!-- Google Font -->
 	<link href="{% static 'https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i' %}" rel="stylesheet">
@@ -31,16 +31,16 @@
 				<i class="fa fa-times"></i>
 			</div>
 			<div class="header-warp">
-				<a href="{% url 'home' %}" class="site-logo">
+				<a href="" class="site-logo">
 					<img src="{% static 'img/Savan.png' %}" alt="" height="100" width="158">
 				</a>
 				<img src="{% static 'img/menu-icon.png' %}" alt="" class="menu-icon">
 				<ul class="main-menu">
-					<li class="active"><a href="{% url 'home' %}">Home</a></li>
+					<li><a href="{% url 'home' %}">Home</a></li>
 					<li><a href="{% url 'certificates' %}">Certificates</a></li>
 					<li><a href="{% url 'resume' %}">Resume</a></li>
 					<li><a href="{% url 'project' %}">Projects</a></li>
-					<li><a href="{% url 'contact' %}">Contact</a></li>
+					<li class="active"><a href="{% url 'contact' %}">Contact</a></li>
 				</ul>
 				<div class="social-links-warp">
 					<div class="social-links">
@@ -55,27 +55,32 @@
 			</div>
 			<div class="copyright">© Savan {% now "Y" %}</div>
 		</header>
-
-
 		<!-- header section end -->
 
 		<!-- Page section -->
-		<div class="page-section home-page">
-			<div class="hero-slider owl-carousel">
-				<div class="slider-item d-flex align-items-center set-bg" data-setbg="{% static 'img/Python Programming Wallpaper.jpg' %}" data-hash="slide-1">
-					<div class="si-text-box">
-						<h1>Hello,</h1>
-							<h4>&nbsp;a bit about me:</h4><br>
-							<p>&nbsp;My name is Savan, and my portfolio is a &nbsp;representation of all that I've learned and
-								&nbsp;accomplished as a science and engineering &nbsp;student.
-							</p>
+		<div class="page-section contact-page">
+			<div class="contact-warp">
+				<div class="row">
+					<div class="col-xl-1 p-0"></div>
+					<div class="col-xl-10 p-0">
+						<div class="contact-text">
+							<span>Say hello</span>
+							<h2>Get in touch</h2>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d923.0990635255065!2d70.81498729711437!3d22.26297476114305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959b580e05e0a21%3A0xd176517fadccfdf5!2sHudco%20Police%20Chowki!5e0!3m2!1sen!2sin!4v1594042959749!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+							<div class="contac-info">
+								<br><p style="font-weight: bold; font-size: large;">Rajkot, india<br></p>
+								<p style="font-weight: bold; font-size: large;">+91 78018 48393</p>
+								<p style="font-weight: bold; font-size: large;">savanjobanputra.sj@gmail.com</p>
+							</div>
 						</div>
+					</div>
+					<div class="col-xl-1 p-0">
 					</div>
 				</div>
 			</div>
-	<!-- Page section end-->
+		</div>
+		<!-- Page section end-->
 	</div>
-
 	<!--====== Javascripts & Jquery ======-->
 	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>

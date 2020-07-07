@@ -30,7 +30,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
-    '',
+    'certificates.apps.CertificatesConfig',
+    'resume.apps.ResumeConfig',
+    'project.apps.ProjectConfig',
+    'contact.apps.ContactConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -74,8 +77,12 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portfolio',
+        'USER': 'postgres',
+        'PASSWORD': 'Honda@0231',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

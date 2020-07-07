@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     {% load static %}
-	<title>Home</title>
+	<title>Certificates</title>
 	<meta charset="UTF-8">
 	<!-- Google Font -->
 	<link href="{% static 'https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i' %}" rel="stylesheet">
@@ -14,7 +14,7 @@
 	<!-- Main Stylesheets -->
 	<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
 	<!--[if lt IE 9]>
-	<script src="{% static 'https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js' %}"></script>
+    <script src="{% static 'https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js' %}"></script>
 	<script src="{% static 'https://oss.maxcdn.com/respond/1.4.2/respond.min.js' %}"></script>
 	<![endif]-->
 </head>
@@ -31,13 +31,13 @@
 				<i class="fa fa-times"></i>
 			</div>
 			<div class="header-warp">
-				<a href="{% url 'home' %}" class="site-logo">
+				<a href="" class="site-logo">
 					<img src="{% static 'img/Savan.png' %}" alt="" height="100" width="158">
 				</a>
 				<img src="{% static 'img/menu-icon.png' %}" alt="" class="menu-icon">
 				<ul class="main-menu">
-					<li class="active"><a href="{% url 'home' %}">Home</a></li>
-					<li><a href="{% url 'certificates' %}">Certificates</a></li>
+					<li><a href="{% url 'home' %}">Home</a></li>
+					<li class="active"><a href="{% url 'certificates' %}">Certificates</a></li>
 					<li><a href="{% url 'resume' %}">Resume</a></li>
 					<li><a href="{% url 'project' %}">Projects</a></li>
 					<li><a href="{% url 'contact' %}">Contact</a></li>
@@ -55,25 +55,26 @@
 			</div>
 			<div class="copyright">© Savan {% now "Y" %}</div>
 		</header>
-
-
 		<!-- header section end -->
 
 		<!-- Page section -->
-		<div class="page-section home-page">
-			<div class="hero-slider owl-carousel">
-				<div class="slider-item d-flex align-items-center set-bg" data-setbg="{% static 'img/Python Programming Wallpaper.jpg' %}" data-hash="slide-1">
-					<div class="si-text-box">
-						<h1>Hello,</h1>
-							<h4>&nbsp;a bit about me:</h4><br>
-							<p>&nbsp;My name is Savan, and my portfolio is a &nbsp;representation of all that I've learned and
-								&nbsp;accomplished as a science and engineering &nbsp;student.
-							</p>
+		<div class="page-section blog-page">
+			<div class="blog-warp">
+				<div class="blog-track">
+					{% for certificates in certificates.all %}
+					<div class="blog-post">
+						<h2 class="post-title">{{ certificates.title }}</h2>
+						<div class="blog-thumb set-bg" data-setbg="{{ certificates.img.url }}"></div>
+						<div class="post-metas">
+							<div class="post-meta">{{ certificates.formated_date }}</div>
 						</div>
+						<p>{{ certificates.body }}</p>
 					</div>
+					{% endfor %}
 				</div>
 			</div>
-	<!-- Page section end-->
+		</div>
+		<!-- Page section end-->
 	</div>
 
 	<!--====== Javascripts & Jquery ======-->
